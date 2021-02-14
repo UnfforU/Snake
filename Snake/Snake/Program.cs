@@ -7,26 +7,19 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(4, 3, '*');
-            Point p2 = new Point(3, 2, '-');
-            Point p3 = new Point(2, 1, '+');
-            Point p4 = new Point(1, 0, '|');
+            HorizontalLine TopLine = new HorizontalLine(5, 10, 10, '*');
 
-            List<Point> AllPoints = new List<Point>(){
-                p1, p2, p3, p4
-            };
+            VerticalLine LeftLine = new VerticalLine(5, 10, 15, '*');
 
-            /* The same as
-            AllPoints.Add(p1);
-            AllPoints.Add(p2);
-            AllPoints.Add(p3);
-            AllPoints.Add(p4);
-            */
+            HorizontalLine BottomLine = new HorizontalLine(5, 10, 15, '*');
 
-            foreach (Point i in AllPoints)
-            {
-                i.Draw();
-            }
+            VerticalLine RightLine = new VerticalLine(10, 10, 15, '*');
+
+            TopLine.Draw();
+            LeftLine.Draw();
+            BottomLine.Draw();
+            RightLine.Draw();
+
 
             Console.ReadLine();
         }
