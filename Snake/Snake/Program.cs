@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows;
 
 namespace Snake
@@ -24,9 +25,19 @@ namespace Snake
             RightLine.Draw();
 
 
-            Point p = new Point(2, 5, '*');
-            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            Point tile = new Point(2, 5, '*');
+            Snake snake = new Snake(tile, 4, Direction.RIGHT);
             snake.Draw();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
 
             Console.ReadLine();
         }
