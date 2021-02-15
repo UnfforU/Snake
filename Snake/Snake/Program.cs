@@ -18,28 +18,25 @@ namespace Snake
             VerticalLine LeftLine = new VerticalLine(0, 0, 24, '+');
             HorizontalLine BottomLine = new HorizontalLine(0, 78, 24, '+');
             VerticalLine RightLine = new VerticalLine(78, 0, 24, '+');
-
             TopLine.Draw();
             LeftLine.Draw();
             BottomLine.Draw();
             RightLine.Draw();
 
 
+            //Рисуем и двигаем змейку
             Point tile = new Point(2, 5, '*');
             Snake snake = new Snake(tile, 4, Direction.RIGHT);
             snake.Draw();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
 
-            Console.ReadLine();
+            while (true)
+            {
+                if(Console.KeyAvailable)
+                    snake.NewDirection(Console.ReadKey().Key);
+                
+                Thread.Sleep(100);
+                snake.Move();
+            }
         }
     }
 }
